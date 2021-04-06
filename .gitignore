@@ -1,0 +1,5 @@
+db.sqlite3
+mysite_django_tutorial/__pycache__/__init__.cpython-39.pyc
+mysite_django_tutorial/__pycache__/settings.cpython-39.pyc
+mysite_django_tutorial/__pycache__/urls.cpython-39.pyc
+mysite_django_tutorial/__pycache__/wsgi.cpython-39.pyc
