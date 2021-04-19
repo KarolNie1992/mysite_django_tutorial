@@ -1,8 +1,8 @@
 <h1>
     {{ question.question_text }}
 </h1>
-<p>{{ question.pub_date }} </p>
-<p>{{ question.pub_date|date:"Y-m-d" }} </p>
+<p>Publish date: {{ question.pub_date }} </p>
+<p>Publish date: {{ question.pub_date|date:"Y-m-d" }} </p>
 
 {% if error_message %} 
     <p><strong> {{error_message}} </strong></p> 
