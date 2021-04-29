@@ -31,7 +31,9 @@ class CreditResult(models.Model):
     #TO DO
     #miesięczną ratę
     monthlyInstallment = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    #data wykonania kalkulacji
+    creditResultDate = models.DateTimeField('calculation date')
 
     def __str__(self):
-        return self.totalAmountRepaid
+        return self.creditResultDate
 
