@@ -34,6 +34,6 @@ class CreditResult(models.Model):
     #data wykonania kalkulacji
     creditResultDate = models.DateTimeField('calculation date')
 
-    def __str__(self):
-        return self.creditResultDate
+    #def __init__(self):
+    #    return self.totalAmountRepaid
 

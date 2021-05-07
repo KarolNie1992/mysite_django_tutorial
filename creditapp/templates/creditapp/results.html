@@ -1,16 +1,28 @@
 <h1>
-    {{ question.question_text }}
+    {{ form.credit_name_text }}
 </h1>
-<p>{{ question.pub_date }} </p>
-<p>{{ question.pub_date|date:"Y-m-d" }} </p>
+<form>
+    <p><label for="interest_rate">Interest rate:</label>
+    <input type="number" id="interest_rate" name="interest_rate" value="{{ form.interest_rate }}" disabled></p>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>
-        {{ choice.choice_text }} -- {{ choice.votes }} vote{{choice.votes|pluralize}}
-    </li>
+    <p><label for="installmentsVal">Number of installments:</label>
+    <input type="number" id="installmentsVal" name="installmentsVal" value="{{ form.installmentsVal }}" disabled></p>
 
-{% endfor %}
-</ul>
+    <p><label for="id_creditValue">Credit value:</label> 
+    <input type="number" id="id_creditValue" name="creditValue" value="{{ form.creditValue }}"  disabled></p>
+    
+    <p><label for="id_monthlyIncome">Monthly income:</label> 
+    <input type="number" id="id_monthlyIncome" name="monthlyIncome" value="{{ form.monthlyIncome }}"  disabled></p>
+    
+    <p><label for="id_monthlyExpenses">Monthly expenses:</label> 
+    <input type="number" id="id_monthlyExpenses" name="monthlyExpenses" value="{{ form.monthlyExpenses }}"  disabled></p>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again ?</a>
+    <p>-----------------</p>
+
+    <p><label for="id_totalAmountRepaid">Total amount repaid:</label> 
+    <input type="number" id="id_totalAmountRepaid" name="totalAmountRepaid" value="{{ creditresult.totalAmountRepaid }}"  disabled></p>
+
+    <p><label for="id_monthlyInstallment">Monthly installment:</label> 
+    <input type="number" id="id_monthlyInstallment" name="monthlyInstallment" value="{{ creditresult.monthlyInstallment }}"  disabled></p>
+
+</form>    

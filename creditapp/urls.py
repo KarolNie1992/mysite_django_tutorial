@@ -9,9 +9,9 @@ app_name = 'creditapp'
 
 urlpatterns = [
     # ex: /creditapp/
-    path('', views.CreditCreateView.as_view(), name='CreditCreateView'),
+    path('', views.Credit_new, name='Credit_new'),
     # ex: /creditapp/5/results/
-    #path('<int:pk>/results/', views.ResultsView.as_view() , name='results'),
+    path('<int:pk>/results/', views.ResultsView , name='ResultsView'),
     # ex: /creditapp/5/calc/
-    path('<int:credit_id>/calc/', views.calc, name='calc'),
+    #path('<int:credit_id>/calc/', views.calc, name='calc'),
 ]

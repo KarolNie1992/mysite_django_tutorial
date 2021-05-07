@@ -1,7 +1,11 @@
 
-<form  
+<form action = "{% url 'creditapp:ResultsView' %}"
 method="post">
 {% csrf_token %}
-    {{ form.as_table  }}
-    <input type="submit" value="Calc">
+    {{ form.as_p  }}
+    <input type="submit" value="Calculation">
 </form>
+
+{% if error_message %} 
+    <p><strong> {{error_message}} </strong></p> 
+{% endif %}
