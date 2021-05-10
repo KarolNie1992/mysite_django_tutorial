@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Credit, CreditResult
+from .models import Credit
 
 class CreditCreateForm(forms.ModelForm):
     """

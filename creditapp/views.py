@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.template import loader
 from django.views import generic
 
-from .models import Credit, CreditResult
+from .models import Credit
 from .forms import CreditCreateForm
 
 def Credit_new(request):
@@ -14,31 +14,38 @@ def Credit_new(request):
         form = CreditCreateForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
+            try:
+                q = 1 + ((post.interest_rate/100)/12)
+                vInstallment = round(post.creditValue * (pow(q,post.installmentsVal)) * ((q-1)/(pow(q,post.installmentsVal)-1)), 2)
+                post.totalAmountRepaid = vInstallment * post.installmentsVal
+                post.monthlyInstallment = vInstallment
+                post.creditResultDate = timezone.now()
 
-            
-            post.save()
-            return redirect('creditapp:ResultsView',pk=post.pk)
+                # Czy użytkownika stać na kredyt?, 
+                # Kwota jaka pozostanie po obliczeniu 
+                # różnicy pomiędzy przychodem a wydatkami                
+                maxMonthlyInstallment = post.monthlyIncome - post.monthlyExpenses
+
+                if post.monthlyInstallment > maxMonthlyInstallment:
+                    return render(request, 'creditapp/credit_create_form.html', {
+                        'form': form,
+                        'error_message': "Error!, You cannot get a loan, the loan installment exceeds your creditworthiness",
+                    })
+                else:    
+                    post.save()
+            except ZeroDivisionError:
+                return render(request, 'creditapp/credit_create_form.html', {
+                    'form': form,
+                    'error_message': "Error!, You can't divide by zero!",
+                })
+            else:
+                return redirect('creditapp:ResultsView',pk=post.pk)
     else:
         form = CreditCreateForm()
     return render(request, 'creditapp/credit_create_form.html',
-                    {'form': form})
+                  {'form': form})
 
 def ResultsView(request, pk):
-    post = get_object_or_404(Credit, pk=pk)
-    try:
-        q = 1 + ((post.interest_rate/100)/12)
-        vInstallment = round(post.creditValue * (pow(q,post.installmentsVal)) * ((q-1)/(pow(q,post.installmentsVal)-1)), 2)
-        
-        vtotalAmountRepaid = vInstallment * post.installmentsVal
-        creditresult = post.creditresult_set.create(monthlyInstallment=vInstallment,
-                                                    totalAmountRepaid=vtotalAmountRepaid,
-                                                    creditResultDate=timezone.now())
-        creditresult.save()
-    except ZeroDivisionError:
-        return render(request, 'creditapp/credit_create_form.html', {
-            'form': post,
-            'error_message': "Error!, You can't divide by zero!",
-        })
-    else:        
-        return render(request, 'creditapp/results.html', {'form': post, 'res': creditresult,})
+    post = get_object_or_404(Credit, pk=pk)    
+    return render(request, 'creditapp/results.html', {'form': post,})
     

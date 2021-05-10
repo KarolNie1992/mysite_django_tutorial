@@ -5,24 +5,18 @@ from django.db import models
 class Credit (models.Model):
 
     #nazwa kalkulacji, nazwa własna 
-    credit_name_text = models.CharField(max_length=200 )
+    credit_name_text = models.CharField(max_length=200, unique=True, )
     #oprocentowanie
-    interest_rate = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    interest_rate = models.DecimalField(max_digits=4, decimal_places=2, null=False)
     #liczba rat
-    installmentsVal = models.DecimalField(max_digits=4, decimal_places=0, default=0)
+    installmentsVal = models.DecimalField(max_digits=4, decimal_places=0, null=False)
     #wartosc kredytu
-    creditValue = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    creditValue = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     #miesięczny przychód
-    monthlyIncome = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    monthlyIncome = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     #miesięczne wydatki
-    monthlyExpenses = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-
-    def __str__(self):
-        return self.credit_name_text
-
-class CreditResult(models.Model):
-
-    credit = models.ForeignKey(Credit,on_delete=models.CASCADE)
+    monthlyExpenses = models.DecimalField(max_digits=10, decimal_places=2, null=False)
+    
     #Możliwą kwotę pożyczki
     #TO DO #wartosc kredytu #creditValue na razie
     #kwotę całkowitą do spłaty
@@ -32,8 +26,8 @@ class CreditResult(models.Model):
     #miesięczną ratę
     monthlyInstallment = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     #data wykonania kalkulacji
-    creditResultDate = models.DateTimeField('calculation date')
+    creditResultDate = models.DateTimeField('calculation date', null=True)
 
-    #def __init__(self):
-    #    return self.totalAmountRepaid
+    def __str__(self):
+        return self.credit_name_text
 
