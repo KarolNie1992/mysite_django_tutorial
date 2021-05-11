@@ -77,12 +77,10 @@ WSGI_APPLICATION = 'mysite_django_tutorial.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangoDB',
-        'USER': 'postgres',
-        'PASSWORD': 'Zaq1xsw2',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': 'db.cnf',
+        },
     }
 }
 

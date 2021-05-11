@@ -10,4 +10,5 @@ polls/__pycache__/urls.cpython-39.pyc
 polls/migrations/__pycache__/
 creditapp/__pycache__/
 creditapp/migrations/__pycache__/
+db.cnf
 .coverage
