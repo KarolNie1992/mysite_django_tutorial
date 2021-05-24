@@ -9,6 +9,7 @@ pipeline {
             }
             steps {
                 sh 'python --version' 
+                set +e
             }
         }
     }
