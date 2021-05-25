@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                powershell label: '', script: 'python --version'
+                sh label: '', script: 'python --version'
             }
         }
     }
