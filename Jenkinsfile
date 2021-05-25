@@ -1,11 +1,9 @@
 pipeline {
-    agent {
-        docker { image 'node:14-alpine' }
-    }
+    agent any 
     stages {
-        stage('Test') {
+        stage('Build') { 
             steps {
-                sh 'node --version'
+                powershell label: '', script: 'python --version'
             }
         }
     }
