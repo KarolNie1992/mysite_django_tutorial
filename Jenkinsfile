@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.9.5-alpine' } }
+    agent none
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'python --version'
+                bat 'python --version'
             }
         }
     }
