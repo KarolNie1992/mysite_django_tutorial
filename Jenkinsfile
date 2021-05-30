@@ -1,9 +1,9 @@
 pipeline {
-    agent any 
+    agent { docker { image 'python:3.9.5-alpine' } }
     stages {
-        stage('Build') { 
+        stage('build') {
             steps {
-                sh label: '', script: 'python --version'
+                sh 'python --version'
             }
         }
     }
