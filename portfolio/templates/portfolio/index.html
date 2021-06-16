@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <title>Home-Karol Niedźwiedź</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'portfolio/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/font-awesome.min.css' %}">
+
+</head>
+<body class="bg-light">
+ 
+  {# navbar start #}
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
+    <div class="container-lg">
+      <a class="navbar-brand text-primary fw-bold fs-4" href="#">Karol</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto flex-nowrap">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#portfolio">Portfolio</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          
+        </div>
+      </div>
+      
+    </div>
+  </nav>
+  {# navbar end #}
+
+  {# home section start #}
+  <section class="home py-5" id="home">
+    <div class="container-lg">
+      <div class="row min-vh-100 align-items-center align-content-center">
+        <div class="col-md-6 mt-5 mt-md-0">
+          <div class="home-img text-center">
+            <img src="{% static 'portfolio/img/profile.png' %}" class="rounded-circle mw-100" alt="profile img">
+          </div>
+        </div>
+        <div class="col-md-6 mt-5 mt-md-0 order-md-first" >
+          <div class="home-text">
+            <p class="text-muted mb-1">Hello I'm</p>
+            <h1 class="text-primary text-uppercase fs-1 fw-bold">IT Implementer</h1>
+            <h2 class="fs-4">Karol Niedźwiedź</h2>
+            <p class="mt-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#portfolio" class="btn btn-primary px-3 mt-3">My Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {# home section end #}
+
+  {# about section start #}
+  <section class="about py-5" id="about">
+    <div class="container-lg py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 ">
+          <div class="section-title text-center">
+            <h2 class="fw-bold mb-5">About me</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="about-text">
+            <h3 class="fs-4 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="row text-center text-uppercase my-3">
+            <div class="col-sm-4">
+              <div class="fact-item">
+                <h4 class="fs-1 fw-bold">100</h4>
+                <p class="text-muted">Projects Completed</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="fact-item">
+                <h4 class="fs-1 fw-bold">90</h4>
+                <p class="text-muted">Happy clients</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="fact-item">
+                <h4 class="fs-1 fw-bold">95</h4>
+                <p class="text-muted">Positive Reviews</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 d-flex align-items-center">
+              <a href="#" class="btn px-3 btn-primary me-5">Download CV</a>
+              <div class="social-links">
+                <a href="#" class="text-dark me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark me-2"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mt-5 mt-md-0">
+          <div class="skill-item mb-4">
+            <h3 class="fs-6">Html</h3>
+            <div class="progress" style="height: 5px;">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item mb-4">
+            <h3 class="fs-6">Css</h3>
+            <div class="progress" style="height: 5px;">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item mb-4">
+            <h3 class="fs-6">Javascript</h3>
+            <div class="progress" style="height: 5px;">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <h3 class="fs-6">Bootstrap</h3>
+            <div class="progress" style="height: 5px;">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {# about section end #}
+
+  {# service section start #}
+  <section class="services  py-5" id="services">
+    <div class="container-lg py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 ">
+          <div class="section-title text-center">
+            <h2 class="fw-bold mb-5">What I Do</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-item bg-white shadow-sm p-4 rounded">
+            <div class="icon my-3 text-primary fs-2">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="fs-5 py-2">Web Development</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-item bg-white shadow-sm p-4 rounded">
+            <div class="icon my-3 text-primary fs-2">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="fs-5 py-2">Creative Design</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="service-item bg-white shadow-sm p-4 rounded">
+            <div class="icon my-3 text-primary fs-2">
+              <i class="fas fa-image"></i>
+            </div>
+            <h3 class="fs-5 py-2">Photoshop</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>  
+      </div>  
+    </div>
+  </section>
+  {# service section end #}
+
+  {# portfolio section start #}
+  <section class="portfolio  py-5" id="portfolio">
+    <div class="container-lg py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 ">
+          <div class="section-title text-center">
+            <h2 class="fw-bold mb-5">Latest Works</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item">
+            <img src="{% static 'portfolio/img/portfolio/1.jpg' %}" class="w-100 img-thumbnail" alt="portfolio item">
+            <h3 class="text-capitalize fs-5 my-2">team section</h3>
+            <p class="mb-4"><a href="#" class="text-primary text-decoration-none">Live Demo</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item">
+            <img src="{% static 'portfolio/img/portfolio/2.jpg' %}" class="w-100 img-thumbnail" alt="portfolio item">
+            <h3 class="text-capitalize fs-5 my-2">team section2</h3>
+            <p class="mb-4"><a href="#" class="text-primary text-decoration-none">Live Demo</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item">
+            <img src="{% static 'portfolio/img/portfolio/3.jpg' %}" class="w-100 img-thumbnail" alt="portfolio item">
+            <h3 class="text-capitalize fs-5 my-2">team section3</h3>
+            <p class="mb-4"><a href="#" class="text-primary text-decoration-none">Live Demo</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item">
+            <img src="{% static 'portfolio/img/portfolio/4.jpg' %}" class="w-100 img-thumbnail" alt="portfolio item">
+            <h3 class="text-capitalize fs-5 my-2">team section4</h3>
+            <p class="mb-4"><a href="#" class="text-primary text-decoration-none">Live Demo</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item">
+            <img src="{% static 'portfolio/img/portfolio/5.jpg' %}" class="w-100 img-thumbnail" alt="portfolio item">
+            <h3 class="text-capitalize fs-5 my-2">team section5</h3>
+            <p class="mb-4"><a href="#" class="text-primary text-decoration-none">Live Demo</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item">
+            <img src="{% static 'portfolio/img/portfolio/6.jpg' %}" class="w-100 img-thumbnail" alt="portfolio item">
+            <h3 class="text-capitalize fs-5 my-2">team section6</h3>
+            <p class="mb-4"><a href="#" class="text-primary text-decoration-none">Live Demo</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  {# portfolio section end #}
+
+  {# freelancer section start #}
+  <section class="freelancer-available py-5 bg-primary">
+    <div class="container-lg py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" >
+          <p class="text-light fs-5">Do you have any project ?</p>
+          <h2 class="fs-1 text-white mb-4">I'm available for freelancer projects</h2>
+          <a href="#contact" class="btn btn-outline-light">Hire me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {# freelancer section end #}
+
+
+<script src="{% static 'portfolio/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
