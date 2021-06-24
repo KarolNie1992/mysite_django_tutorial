@@ -13,3 +13,4 @@ creditapp/migrations/__pycache__/
 /static
 db.cnf
 .coverage
+.vscode/launch.json
