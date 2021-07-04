@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static i18n %}
 
 <html lang="en">
 <head>
@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="{% static 'portfolio/css/bootstrap.min.css' %}">  
   <link rel="stylesheet" href="{% static 'portfolio/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static  'portfolio/css/dark-mode.css' %}">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 <body class="bg-light">
- 
+
   {# navbar start #}
   <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
     <div class="container-lg ">
@@ -24,12 +24,25 @@
       
       <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
         <ul class="navbar-nav ms-auto flex-nowrap">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item  mynav-li"><a class="nav-link" href="#home">{% trans "Home" %}</a></li>
+          <li class="nav-item  mynav-li"><a class="nav-link" href="#about">{% trans "About" %}</a></li>
+          <li class="nav-item  mynav-li"><a class="nav-link" href="#skills">{% trans "Skills" %}</a></li>
+          <li class="nav-item  mynav-li"><a class="nav-link" href="#services">{% trans "Services" %}</a></li>
+          <li class="nav-item  mynav-li"><a class="nav-link" href="#portfolio">{% trans "Portfolio" %}</a></li>
+          <li class="nav-item  mynav-li"><a class="nav-link" href="#contact">{% trans "Contact" %}</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {% trans "Language" %}</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                {% get_current_language as LANGUAGE_CODE %}                
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+
+                {% for lang in languages %}
+                  <li><a class='dropdown-item' href="/{{lang.code}}">{{ lang.name_translated  }}</a> </li>
+                {% endfor %}
+              
+            </ul>
+          </li>
           <li class="nav-item mx-2"></li>
           <li >
             <input type="checkbox" class="btn-check " id="darkButton" autocomplete="off">
@@ -37,11 +50,26 @@
           </li>
         </ul>
       </div>
+
+
       
     </div>
   </nav>
   {# navbar end #}
 
+  {# Info section start #}
+  <section class="freelancer-available pt-5 pb-4 mt-5 bg-primary">
+    <div class="container-lg py-2">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center" >
+          <p class="text-light fs-5">Cześć, widoczna strona służy mi do rozwoju swoich umiejętności programowania (Python/Django).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {# Info section end #}  
+  
+  
   {# home section start #}
   <section class="home py-5" id="home">
     <div class="container-lg">
@@ -53,11 +81,11 @@
         </div>
         <div class="col-md-6 mt-5 mt-md-0 order-md-first" >
           <div class="home-text">
-            <p class="text-muted mb-1">Hello I'm</p>
-            <h1 class="text-primary text-uppercase fs-1 fw-bold">IT Implementer</h1>
+            <p class="text-muted mb-1">{% trans "Hello I'm" %}</p>
+            <h1 class="text-primary text-uppercase fs-1 fw-bold">{% trans "IT Implementer" %}</h1>
             <h2 class="fs-4">Karol Niedźwiedź</h2>
             <p class="mt-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#portfolio" class="btn btn-primary px-3 mt-3">My Work</a>
+            <a href="#portfolio" class="btn btn-primary px-3 mt-3">{% trans "My Work" %}</a>
           </div>
         </div>
       </div>

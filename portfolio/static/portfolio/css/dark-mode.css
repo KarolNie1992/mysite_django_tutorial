@@ -32,4 +32,21 @@
   [data-theme="dark"] .text-dark {
     color: #fff !important;
   }
+
+  [data-theme="dark"] .dropdown-menu {
+    background-color: #222 !important; 
+  }
   
+  [data-theme="dark"] .dropdown-item {
+    color: #eee !important;
+  }
+
+  [data-theme="dark"] .dropdown-item:focus {
+    color: #eee !important;
+    background-color: #000 !important;
+  }
+
+  [data-theme="dark"]  .dropdown-item:hover {
+    color: #eee !important;
+    background-color: #000 !important;
+  }  

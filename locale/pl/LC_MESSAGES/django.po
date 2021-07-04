@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-04 22:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: .\mysite_django_tutorial\settings.py:135
+msgid "Polish"
+msgstr "Polski"
+
+#: .\mysite_django_tutorial\settings.py:136
+msgid "English"
+msgstr "Angielski"
+
+#: .\portfolio\templates\portfolio\index.html:26
+msgid "Home"
+msgstr "Strona główna"
+
+#: .\portfolio\templates\portfolio\index.html:27
+msgid "About"
+msgstr "O mnie"
+
+#: .\portfolio\templates\portfolio\index.html:28
+msgid "Skills"
+msgstr "Umiejętności"
+
+#: .\portfolio\templates\portfolio\index.html:29
+msgid "Services"
+msgstr "Usługi"
+
+#: .\portfolio\templates\portfolio\index.html:30
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: .\portfolio\templates\portfolio\index.html:31
+msgid "Contact"
+msgstr "Kontakt"
+
+#: .\portfolio\templates\portfolio\index.html:33
+msgid "Language"
+msgstr "Język"
+
+#: .\portfolio\templates\portfolio\index.html:68
+msgid "Hello I'm"
+msgstr "Cześć, jestem"
+
+#: .\portfolio\templates\portfolio\index.html:69
+msgid "IT Implementer"
+msgstr "Wdrożeniowcem IT"
+
+#: .\portfolio\templates\portfolio\index.html:72
+msgid "My Work"
+msgstr "Moje projekty"
+
+#: .\templates\admin\base_site.html:3
+msgid "Django site admin"
+msgstr ""
+
+#: .\templates\admin\index.html:23
+msgid "Recent actions"
+msgstr ""
+
+#: .\templates\admin\index.html:24
+msgid "My actions"
+msgstr ""
+
+#: .\templates\admin\index.html:28
+msgid "None available"
+msgstr ""
+
+#: .\templates\admin\index.html:42
+msgid "Unknown content"
+msgstr ""
