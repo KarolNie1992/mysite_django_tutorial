@@ -1,12 +1,139 @@
+<!DOCTYPE html>
+{% load static i18n %}
 
-<form 
-method="post">
-{% csrf_token %}
-    {{ form.as_p  }}
-    <input type="submit" value="Calculation">
-</form>
+<html lang="en">
+<head>
+  <title>Credit application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'portfolio/css/bootstrap.min.css' %}">  
+  <link rel="stylesheet" href="{% static 'portfolio/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static  'portfolio/css/dark-mode.css' %}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-{% if error_message %} 
-    <p><strong> {{error_message}} </strong></p> 
-{% endif %}
+</head>
+<body class="bg-light">
 
+  {# navbar start #}
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
+    <div class="container-lg ">
+      <a class="navbar-brand text-primary fw-bold fs-4" href="#">Credit application</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <ul class="navbar-nav ms-auto flex-nowrap">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {% trans "Language" %}</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                {% get_current_language as LANGUAGE_CODE %}                
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+
+                {% for lang in languages %}
+                  <li><a class='dropdown-item' href="/{{lang.code}}">{{ lang.name_translated  }}</a> </li>
+                {% endfor %}
+              
+            </ul>
+          </li>
+          <li class="nav-item mx-2"></li>
+          <li >
+            <input type="checkbox" class="btn-check " id="darkButton" autocomplete="off">
+            <label class="btn btn-outline-primary px-3" for="darkButton"><i class="fas fa-moon"></i></label><br>
+          </li>
+        </ul>
+      </div>
+
+
+      
+    </div>
+  </nav>
+  {# navbar end #}
+    
+    {# form start #}
+    <section class="pt-5 pb-4 mt-5 ">
+        <div class="container-lg py-2">
+            <form method="post">
+            {% csrf_token %}
+                {# {{ form.as_p  }} #}
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_credit_name_text" class="col-form-label">Credit name text</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="id_credit_name_text" class="form-control" name="credit_name_text">
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_interest_rate" class="col-form-label">Interest rate</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="id_interest_rate" class="form-control" name="interest_rate" step="0.01">
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_installmentsVal" class="col-form-label">Number of installments</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="id_installmentsVal" class="form-control" name="installmentsVal" >
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_creditValue" class="col-form-label">Credit value</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="id_creditValue" class="form-control" name="creditValue" step="0.01">
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_monthlyIncome" class="col-form-label">Monthly income</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="id_monthlyIncome" class="form-control" name="monthlyIncome" step="0.01">
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_monthlyExpenses" class="col-form-label">Monthly expenses</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="id_monthlyExpenses" class="form-control" name="monthlyExpenses" step="0.01">
+                    </div>
+                </div>
+                
+                <input type="submit" class="btn my-2 btn-primary" value="Calculation">
+            </form>
+
+            {% if error_message %} 
+                <p><strong> {{error_message}} </strong></p> 
+            {% endif %}
+        </div>
+    </section>
+    {# form end #}
+
+
+
+  <footer class="footer border-top py-4">
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="m-0 text-center text-muted">&copy; 2021 Karol N. </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="{% static 'portfolio/js/bootstrap.bundle.min.js' %} "></script>
+<script src="{% static 'portfolio/js/dark-mode-switch.min.js' %} "></script>
+</body>
+</html>

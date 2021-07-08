@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-04 22:56+0200\n"
+"POT-Creation-Date: 2021-07-08 22:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,51 +20,103 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: .\mysite_django_tutorial\settings.py:135
+#: .\mysite_django_tutorial\settings.py:136
 msgid "Polish"
 msgstr "Polski"
 
-#: .\mysite_django_tutorial\settings.py:136
+#: .\mysite_django_tutorial\settings.py:137
 msgid "English"
 msgstr "Angielski"
 
-#: .\portfolio\templates\portfolio\index.html:26
+#: .\portfolio\templates\portfolio\index.html:27
 msgid "Home"
 msgstr "Strona główna"
 
-#: .\portfolio\templates\portfolio\index.html:27
+#: .\portfolio\templates\portfolio\index.html:28
 msgid "About"
 msgstr "O mnie"
 
-#: .\portfolio\templates\portfolio\index.html:28
+#: .\portfolio\templates\portfolio\index.html:29
 msgid "Skills"
 msgstr "Umiejętności"
 
-#: .\portfolio\templates\portfolio\index.html:29
+#: .\portfolio\templates\portfolio\index.html:30
 msgid "Services"
 msgstr "Usługi"
 
-#: .\portfolio\templates\portfolio\index.html:30
+#: .\portfolio\templates\portfolio\index.html:31
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: .\portfolio\templates\portfolio\index.html:31
+#: .\portfolio\templates\portfolio\index.html:32
 msgid "Contact"
 msgstr "Kontakt"
 
-#: .\portfolio\templates\portfolio\index.html:33
+#: .\portfolio\templates\portfolio\index.html:34
 msgid "Language"
 msgstr "Język"
 
-#: .\portfolio\templates\portfolio\index.html:68
+#: .\portfolio\templates\portfolio\index.html:66
+msgid ""
+"Hi, the page you see is for developing my programming skills (Python / "
+"Django)."
+msgstr ""
+"Cześć, widoczna strona służy mi do rozwoju moich umiejętności programowania "
+"(Python/Django)."
+
+#: .\portfolio\templates\portfolio\index.html:79
+msgid "Projects / demo applications"
+msgstr "Projekty / aplikacje demo"
+
+#: .\portfolio\templates\portfolio\index.html:87
+#, fuzzy
+#| msgid "Portfolio"
+msgid "Portfolio application"
+msgstr "Portfolio"
+
+#: .\portfolio\templates\portfolio\index.html:88
+msgid "Visible app on this page."
+msgstr "Widoczna strona."
+
+#: .\portfolio\templates\portfolio\index.html:89
+#: .\portfolio\templates\portfolio\index.html:97
+#: .\portfolio\templates\portfolio\index.html:106
+msgid "Demo"
+msgstr "Demo"
+
+#: .\portfolio\templates\portfolio\index.html:95
+msgid "Credit application"
+msgstr "Mini kalkulator kredytowy"
+
+#: .\portfolio\templates\portfolio\index.html:96
+msgid "Application used to calculate installments."
+msgstr "Aplikacja służąca do wyliczania rat."
+
+#: .\portfolio\templates\portfolio\index.html:103
+msgid "Poll application"
+msgstr "Aplikacja ankietowa"
+
+#: .\portfolio\templates\portfolio\index.html:104
+msgid "Aplication from official"
+msgstr "Aplikacja z oficjalnego"
+
+#: .\portfolio\templates\portfolio\index.html:104
+msgid "tutorial"
+msgstr "samouczka"
+
+#: .\portfolio\templates\portfolio\index.html:104
+msgid "Django."
+msgstr "Django."
+
+#: .\portfolio\templates\portfolio\index.html:131
 msgid "Hello I'm"
 msgstr "Cześć, jestem"
 
-#: .\portfolio\templates\portfolio\index.html:69
+#: .\portfolio\templates\portfolio\index.html:132
 msgid "IT Implementer"
 msgstr "Wdrożeniowcem IT"
 
-#: .\portfolio\templates\portfolio\index.html:72
+#: .\portfolio\templates\portfolio\index.html:135
 msgid "My Work"
 msgstr "Moje projekty"
 
@@ -87,3 +139,15 @@ msgstr ""
 #: .\templates\admin\index.html:42
 msgid "Unknown content"
 msgstr ""
+
+#~ msgid "Aplication"
+#~ msgstr "dasdasdasd"
+
+#~ msgid "demo"
+#~ msgstr "demo pl"
+
+#~ msgid "Django. It's basic poll application."
+#~ msgstr "Django."
+
+#~ msgid "Link to application"
+#~ msgstr "Link do aplikacji"
