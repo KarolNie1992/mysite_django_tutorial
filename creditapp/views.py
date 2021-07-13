@@ -39,13 +39,19 @@ def Credit_new(request):
                     'error_message': "Error!, You can't divide by zero!",
                 })
             else:
-                return redirect('creditapp:ResultsView',pk=post.pk)
+                #return redirect('creditapp:ResultsView',pk=post.pk)
+                return render (request, 'creditapp/credit_create_form.html',{
+                    'form': form,
+                    'totalAmountRepaid': post.totalAmountRepaid,
+                    'monthlyInstallment': post.monthlyInstallment,
+                    'calc': True,
+                })
     else:
         form = CreditCreateForm()
     return render(request, 'creditapp/credit_create_form.html',
                   {'form': form})
 
-def ResultsView(request, pk):
-    post = get_object_or_404(Credit, pk=pk)    
-    return render(request, 'creditapp/results.html', {'form': post,})
+#def ResultsView(request, pk):
+#    post = get_object_or_404(Credit, pk=pk)    
+#    return render(request, 'creditapp/results.html', {'form': post,})
     

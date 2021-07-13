@@ -86,11 +86,12 @@ WSGI_APPLICATION = 'mysite_django_tutorial.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': 'db.cnf',
-            'charset': 'utf8mb4',
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangoDB',
+        'USER': 'postgres',
+        'PASSWORD': 'Zaq1xsw2',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -119,14 +120,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'pl'
-
 TIME_ZONE = 'Europe/Warsaw'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+DECIMAL_SEPARATOR = '.'
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale')

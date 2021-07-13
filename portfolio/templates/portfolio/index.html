@@ -94,7 +94,7 @@
           <div class="card-body bg-white shadow-sm p-4 rounded">
             <h2 class="card-title">{% trans "Credit application" %}</h2>
             <p class="card-text text-muted">{% trans "Application used to calculate installments." %}</p>
-            <a class="btn btn-primary btn-sm" href="/creditapp">{% trans "Demo" %}</a>
+            <a class="btn btn-primary btn-sm" href="/{{LANGUAGE_CODE}}/creditapp">{% trans "Demo" %}</a>
           </div>
         </div>
 
@@ -103,7 +103,7 @@
             <h2 class="card-title">{% trans "Poll application" %}</h2>
             <p class="card-text text-muted">{% trans "Aplication from official"%} <a href="https://docs.djangoproject.com/en/3.2/intro/tutorial01/">{% trans "tutorial" %}</a> {% trans "Django." %}</p>
                        
-            <a class="btn btn-primary btn-sm" href="/polls">{% trans "Demo" %}</a>
+            <a class="btn btn-primary btn-sm" href="/{{LANGUAGE_CODE}}/polls">{% trans "Demo" %}</a>
           </div>
         </div>
 

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load static i18n %}
+{% load l10n %}
+
 
 <html lang="en">
 <head>
@@ -62,7 +64,7 @@
                         <label for="id_credit_name_text" class="col-form-label">Credit name text</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_credit_name_text" class="form-control" name="credit_name_text">
+                        <input type="text" id="id_credit_name_text" class="form-control" {% if calc %} value="{{ credit_name_text }}" {% endif %}  name="credit_name_text" >
                     </div>
                 </div>
 
@@ -80,7 +82,7 @@
                         <label for="id_installmentsVal" class="col-form-label">Number of installments</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_installmentsVal" class="form-control" name="installmentsVal" >
+                        <input type="number" id="id_installmentsVal" class="form-control" name="installmentsVal" >
                     </div>
                 </div>
 
@@ -89,7 +91,7 @@
                         <label for="id_creditValue" class="col-form-label">Credit value</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_creditValue" class="form-control" name="creditValue" step="0.01">
+                        <input type="number" id="id_creditValue" class="form-control" name="creditValue" step="0.01">
                     </div>
                 </div>
 
@@ -98,7 +100,7 @@
                         <label for="id_monthlyIncome" class="col-form-label">Monthly income</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_monthlyIncome" class="form-control" name="monthlyIncome" step="0.01">
+                        <input type="number" id="id_monthlyIncome" class="form-control" name="monthlyIncome" step="0.01">
                     </div>
                 </div>
 
@@ -107,12 +109,33 @@
                         <label for="id_monthlyExpenses" class="col-form-label">Monthly expenses</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_monthlyExpenses" class="form-control" name="monthlyExpenses" step="0.01">
+                        <input type="number" id="id_monthlyExpenses" class="form-control" name="monthlyExpenses" step="0.01">
                     </div>
                 </div>
                 
                 <input type="submit" class="btn my-2 btn-primary" value="Calculation">
             </form>
+
+            {% if calc %}
+              <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_totalAmountRepaid" class="col-form-label">Total amount repaid:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="id_totalAmountRepaid" class="form-control" name="totalAmountRepaid" value="{{ totalAmountRepaid|unlocalize }}" step="0.01" disabled>
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_monthlyInstallment" class="col-form-label">Monthly installment:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="id_monthlyInstallment" class="form-control" name="monthlyInstallment" value="{{ monthlyInstallment|unlocalize  }}" step="0.01" disabled>
+                    </div>
+                </div>
+            {% endif %}
+
 
             {% if error_message %} 
                 <p><strong> {{error_message}} </strong></p> 
