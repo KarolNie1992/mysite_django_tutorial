@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
+    'viewonsnow.apps.ViewonsnowConfig',
     'polls.apps.PollsConfig',
     'creditapp.apps.CreditappConfig',
     'django.contrib.admin',

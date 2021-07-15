@@ -25,5 +25,6 @@ urlpatterns += i18n_patterns(
     path('', include('portfolio.urls')),
     path('creditapp/', include('creditapp.urls')),
     path('polls/', include('polls.urls')),
+    path('viewonsnow/', include('viewonsnow.urls')),
     prefix_default_language=True,
 )

@@ -1,6 +1,7 @@
 """
 Views for credit app
 """
+from django.http.response import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.template import loader
@@ -40,12 +41,23 @@ def Credit_new(request):
                 })
             else:
                 #return redirect('creditapp:ResultsView',pk=post.pk)
+                form_data = form.cleaned_data
                 return render (request, 'creditapp/credit_create_form.html',{
-                    'form': form,
+                    'form': form_data,
                     'totalAmountRepaid': post.totalAmountRepaid,
                     'monthlyInstallment': post.monthlyInstallment,
                     'calc': True,
                 })
+        else: 
+            return render(request, 'creditapp/credit_create_form.html', {
+                    'form': form,
+                    'error_message': form.errors.values(),
+               })
+            
+
+            
+
+
     else:
         form = CreditCreateForm()
     return render(request, 'creditapp/credit_create_form.html',

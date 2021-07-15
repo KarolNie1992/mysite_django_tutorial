@@ -18,7 +18,7 @@ class Credit (models.Model):
     monthlyExpenses = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     
     #Możliwą kwotę pożyczki
-    #TO DO #wartosc kredytu #creditValue na razie
+    #wartosc kredytu #creditValue na razie
     #kwotę całkowitą do spłaty
     totalAmountRepaid = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     #czas na jaki został rozłożony okres spłaty

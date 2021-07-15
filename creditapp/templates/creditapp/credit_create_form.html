@@ -19,7 +19,7 @@
   {# navbar start #}
   <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
     <div class="container-lg ">
-      <a class="navbar-brand text-primary fw-bold fs-4" href="#">Credit application</a>
+      <a class="navbar-brand text-primary fw-bold fs-4" href="#">{% trans "Credit application" %}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,7 +34,7 @@
                 {% get_language_info_list for LANGUAGES as languages %}
 
                 {% for lang in languages %}
-                  <li><a class='dropdown-item' href="/{{lang.code}}">{{ lang.name_translated  }}</a> </li>
+                  <li><a class='dropdown-item' href="/{{lang.code}}"> {{ lang.name_translated  }}</a> </li>
                 {% endfor %}
               
             </ul>
@@ -61,65 +61,65 @@
                 {# {{ form.as_p  }} #}
                 <div class="row g-3 my-1">
                     <div class="col-md-3">
-                        <label for="id_credit_name_text" class="col-form-label">Credit name text</label>
+                        <label for="id_credit_name_text" class="col-form-label">{% trans "Credit name text" %}</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_credit_name_text" class="form-control" {% if calc %} value="{{ credit_name_text }}" {% endif %}  name="credit_name_text" >
-                    </div>
-                </div>
-
-                <div class="row g-3 my-1">
-                    <div class="col-md-3">
-                        <label for="id_interest_rate" class="col-form-label">Interest rate</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" id="id_interest_rate" class="form-control" name="interest_rate" step="0.01">
+                        <input type="text" id="id_credit_name_text" class="form-control" name="credit_name_text" {% if calc %} value="{{ form.credit_name_text }}" disabled {% endif %} >
                     </div>
                 </div>
 
                 <div class="row g-3 my-1">
                     <div class="col-md-3">
-                        <label for="id_installmentsVal" class="col-form-label">Number of installments</label>
+                        <label for="id_interest_rate" class="col-form-label">{% trans "Interest rate" %}</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="number" id="id_installmentsVal" class="form-control" name="installmentsVal" >
-                    </div>
-                </div>
-
-                <div class="row g-3 my-1">
-                    <div class="col-md-3">
-                        <label for="id_creditValue" class="col-form-label">Credit value</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" id="id_creditValue" class="form-control" name="creditValue" step="0.01">
+                        <input type="number" id="id_interest_rate" class="form-control" name="interest_rate" step="0.01" {% if calc %} value="{{ form.interest_rate|unlocalize }}" disabled {% endif %}>
                     </div>
                 </div>
 
                 <div class="row g-3 my-1">
                     <div class="col-md-3">
-                        <label for="id_monthlyIncome" class="col-form-label">Monthly income</label>
+                        <label for="id_installmentsVal" class="col-form-label">{% trans "Number of installments" %}</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="number" id="id_monthlyIncome" class="form-control" name="monthlyIncome" step="0.01">
+                        <input type="number" id="id_installmentsVal" class="form-control" name="installmentsVal" {% if calc %} value="{{ form.installmentsVal|unlocalize }}" disabled {% endif %}>
                     </div>
                 </div>
 
                 <div class="row g-3 my-1">
                     <div class="col-md-3">
-                        <label for="id_monthlyExpenses" class="col-form-label">Monthly expenses</label>
+                        <label for="id_creditValue" class="col-form-label">{% trans "Credit value" %}</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="number" id="id_monthlyExpenses" class="form-control" name="monthlyExpenses" step="0.01">
+                        <input type="number" id="id_creditValue" class="form-control" name="creditValue" step="0.01" {% if calc %} value="{{ form.creditValue|unlocalize }}" disabled {% endif %}>
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_monthlyIncome" class="col-form-label">{% trans "Monthly income" %}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="id_monthlyIncome" class="form-control" name="monthlyIncome" step="0.01" {% if calc %} value="{{ form.monthlyIncome|unlocalize }}" disabled {% endif %}>
+                    </div>
+                </div>
+
+                <div class="row g-3 my-1">
+                    <div class="col-md-3">
+                        <label for="id_monthlyExpenses" class="col-form-label">{% trans "Monthly expenses" %}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" id="id_monthlyExpenses" class="form-control" name="monthlyExpenses" step="0.01" {% if calc %} value="{{ form.monthlyExpenses|unlocalize }}" disabled {% endif %}>
                     </div>
                 </div>
                 
-                <input type="submit" class="btn my-2 btn-primary" value="Calculation">
+                <input type="submit" class="btn my-2 btn-primary"  {% if calc %}value="Clear"{% else %}value="Calculation"{% endif %}>
             </form>
 
             {% if calc %}
               <div class="row g-3 my-1">
                     <div class="col-md-3">
-                        <label for="id_totalAmountRepaid" class="col-form-label">Total amount repaid:</label>
+                        <label for="id_totalAmountRepaid" class="col-form-label">{% trans "Total amount repaid" %}</label>
                     </div>
                     <div class="col-md-3">
                         <input type="number" id="id_totalAmountRepaid" class="form-control" name="totalAmountRepaid" value="{{ totalAmountRepaid|unlocalize }}" step="0.01" disabled>
@@ -128,7 +128,7 @@
 
                 <div class="row g-3 my-1">
                     <div class="col-md-3">
-                        <label for="id_monthlyInstallment" class="col-form-label">Monthly installment:</label>
+                        <label for="id_monthlyInstallment" class="col-form-label">{% trans "Monthly installment" %}</label>
                     </div>
                     <div class="col-md-3">
                         <input type="number" id="id_monthlyInstallment" class="form-control" name="monthlyInstallment" value="{{ monthlyInstallment|unlocalize  }}" step="0.01" disabled>

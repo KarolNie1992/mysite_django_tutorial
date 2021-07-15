@@ -50,8 +50,3 @@
     color: #eee !important;
     background-color: #000 !important;
   }  
-  
-  [data-theme="dark"]  .form-control {
-    color: #eee !important;
-    background-color: #222 !important;
-  }    

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 22:12+0200\n"
+"POT-Creation-Date: 2021-07-16 00:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,56 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: .\mysite_django_tutorial\settings.py:136
+#: .\creditapp\templates\creditapp\credit_create_form.html:22
+#: .\portfolio\templates\portfolio\index.html:95
+msgid "Credit application"
+msgstr "Mini kalkulator kredytowy"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:30
+#: .\portfolio\templates\portfolio\index.html:34
+#: .\viewonsnow\templates\viewonsnow\main.html:30
+msgid "Language"
+msgstr "Język"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:64
+msgid "Credit name text"
+msgstr "Nazwa kalkulacji"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:73
+msgid "Interest rate"
+msgstr "Oprocentowanie"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:82
+msgid "Number of installments"
+msgstr "Liczba rat"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:91
+#, fuzzy
+#| msgid "Credit application"
+msgid "Credit value"
+msgstr "Mini kalkulator kredytowy"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:100
+msgid "Monthly income"
+msgstr "Miesięczne przychody"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:109
+msgid "Monthly expenses"
+msgstr "Miesięczne wydatki"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:122
+msgid "Total amount repaid"
+msgstr "Kwota całkowita do spłaty"
+
+#: .\creditapp\templates\creditapp\credit_create_form.html:131
+msgid "Monthly installment"
+msgstr "Miesięczna rata"
+
+#: .\mysite_django_tutorial\settings.py:135
 msgid "Polish"
 msgstr "Polski"
 
-#: .\mysite_django_tutorial\settings.py:137
+#: .\mysite_django_tutorial\settings.py:136
 msgid "English"
 msgstr "Angielski"
 
@@ -51,10 +96,6 @@ msgstr "Portfolio"
 #: .\portfolio\templates\portfolio\index.html:32
 msgid "Contact"
 msgstr "Kontakt"
-
-#: .\portfolio\templates\portfolio\index.html:34
-msgid "Language"
-msgstr "Język"
 
 #: .\portfolio\templates\portfolio\index.html:66
 msgid ""
@@ -83,10 +124,6 @@ msgstr "Widoczna strona."
 #: .\portfolio\templates\portfolio\index.html:106
 msgid "Demo"
 msgstr "Demo"
-
-#: .\portfolio\templates\portfolio\index.html:95
-msgid "Credit application"
-msgstr "Mini kalkulator kredytowy"
 
 #: .\portfolio\templates\portfolio\index.html:96
 msgid "Application used to calculate installments."
@@ -138,6 +175,20 @@ msgstr ""
 
 #: .\templates\admin\index.html:42
 msgid "Unknown content"
+msgstr ""
+
+#: .\viewonsnow\templates\viewonsnow\main.html:22
+#, fuzzy
+#| msgid "Poll application"
+msgid "Snow application"
+msgstr "Aplikacja ankietowa"
+
+#: .\viewonsnow\templates\viewonsnow\main.html:64
+msgid "Input before snow"
+msgstr ""
+
+#: .\viewonsnow\templates\viewonsnow\main.html:79
+msgid "output_after_snow"
 msgstr ""
 
 #~ msgid "Aplication"
