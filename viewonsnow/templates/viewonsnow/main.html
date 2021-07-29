@@ -8,10 +8,9 @@
   <title>Snow application</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static 'viewonsnow/css/bootstrap.min.css' %}">  
-  <link rel="stylesheet" href="{% static 'viewonsnow/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" href="{% static  'viewonsnow/css/dark-mode.css' %}">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  {% include 'base/css.html' %}
+  {% include 'base/js_top.html' %}
+  {{ calc_id|json_script:"calc_id" }}
 
 </head>
 <body class="bg-light">
@@ -70,10 +69,12 @@
 
     
                 
-                <input type="submit" class="btn my-2 btn-primary"  {% if calc %}value="Clear"{% else %}value="Calculation"{% endif %}>
+                <input  class="btn my-2 btn-primary"  {% if calc %}type="submit" value="Clear" onClick="this.form.reset()"
+                                                      {% else %}type="submit" value="Calculation"{% endif %}>
             </form>
 
-            {% if calc %}
+            
+            {% comment %} {% if calc %}
             <div class="row g-3 my-1">
                 <div class="col-md-3">
                     <label for="id_output_after_snow" class="col-form-label">{% trans "output_after_snow" %}</label>
@@ -83,7 +84,7 @@
                 </div>
             </div>
 
-            {% endif %}
+            {% endif %} {% endcomment %}
 
 
             {% if error_message %} 
@@ -93,6 +94,18 @@
     </section>
     {# form end #}
 
+    {# chart start #}
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="myChart_before" width="400" height="400"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChart_after" width="400" height="400"></canvas>
+      </div>
+    </div>
+    
+    {# chart end #}
+    
 
 
   <footer class="footer border-top py-4">
@@ -107,5 +120,7 @@
 
 <script src="{% static 'viewonsnow/js/bootstrap.bundle.min.js' %} "></script>
 <script src="{% static 'viewonsnow/js/dark-mode-switch.min.js' %} "></script>
+<script src="{% static 'viewonsnow/js/api-data.js' %}"></script>
+
 </body>
 </html>
