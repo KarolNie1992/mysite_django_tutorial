@@ -32,8 +32,14 @@
                 {% get_available_languages as LANGUAGES %}
                 {% get_language_info_list for LANGUAGES as languages %}
 
-                {% for lang in languages %}
-                  <li><a class='dropdown-item' href="/{{lang.code}}"> {{ lang.name_translated  }}</a> </li>
+                {% comment %} {% for lang in languages %}
+                  <li><a class='dropdown-item' href="/{{lang.code}}/{% url 'viewonsnow:viewonsnow_index' %}"> {{ lang.name_translated  }}</a> </li>
+                {% endfor %} {% endcomment %}
+
+                {% for lang_code, lang_name in LANGUAGES %}
+                  {% language lang_code %}
+                    <li><a class='dropdown-item' href="{% url 'viewonsnow:viewonsnow_index'  %}">{{ lang_name }}</a> </li>
+                  {% endlanguage %}
                 {% endfor %}
               
             </ul>
@@ -69,8 +75,8 @@
 
     
                 
-                <input  class="btn my-2 btn-primary"  {% if calc %}type="submit" value="Clear" onClick="this.form.reset()"
-                                                      {% else %}type="submit" value="Calculation"{% endif %}>
+                <input  class="btn my-2 btn-primary"  {% if calc %}type="submit" value="{% trans "Clear" %}" name="clear"
+                                                      {% else %}type="submit" value="{% trans "Calculation" %}"{% endif %}>
             </form>
 
             
@@ -95,15 +101,18 @@
     {# form end #}
 
     {# chart start #}
-    <div class="row">
-      <div class="col-md-6">
-        <canvas id="myChart_before" width="400" height="400"></canvas>
+    <section class="chart ">
+      <div class="container-lg py-4">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <canvas id="myChart_before" width="400" height="400"></canvas>
+          </div>
+          <div class="col-md-6">
+            <canvas id="myChart_after" width="400" height="400"></canvas>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <canvas id="myChart_after" width="400" height="400"></canvas>
-      </div>
-    </div>
-    
+    </section>
     {# chart end #}
     
 

@@ -2,6 +2,7 @@ from django.http.response import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import View
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -16,7 +17,8 @@ User = get_user_model()
 # Create your views here.
 
 def viewonsnow_index(request):
-    if request.method == 'POST':
+    #clear jest przekazywany w momencie czyczczenia okna 
+    if request.method == 'POST' and request.POST.get("clear") == None:
         form = SnowCreateForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
@@ -31,6 +33,12 @@ def viewonsnow_index(request):
                 post.output_after_snow = ','.join([str(elem) for elem in outputList])
                 post.save()
 
+            except ValueError:
+                context = _("The entered value is not valid.")
+                return render(request, 'viewonsnow/main.html', {
+                    'form': form,
+                    'error_message': str(context),
+                })
 
             except NotImplementedError:
                 return render(request, 'viewonsnow/main.html', {

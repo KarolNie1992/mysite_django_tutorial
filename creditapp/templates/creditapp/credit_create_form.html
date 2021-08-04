@@ -33,8 +33,14 @@
                 {% get_available_languages as LANGUAGES %}
                 {% get_language_info_list for LANGUAGES as languages %}
 
-                {% for lang in languages %}
+                {% comment %} {% for lang in languages %}
                   <li><a class='dropdown-item' href="/{{lang.code}}"> {{ lang.name_translated  }}</a> </li>
+                {% endfor %} {% endcomment %}
+
+                {% for lang_code, lang_name in LANGUAGES %}
+                  {% language lang_code %}
+                    <li><a class='dropdown-item' href="{% url 'creditapp:Credit_new'  %}">{{ lang_name }}</a> </li>
+                  {% endlanguage %}
                 {% endfor %}
               
             </ul>

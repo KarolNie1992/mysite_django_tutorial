@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 00:05+0200\n"
+"POT-Creation-Date: 2021-08-05 01:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,83 +21,83 @@ msgstr ""
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: .\creditapp\templates\creditapp\credit_create_form.html:22
-#: .\portfolio\templates\portfolio\index.html:95
+#: .\portfolio\templates\portfolio\index.html:99
 msgid "Credit application"
 msgstr "Mini kalkulator kredytowy"
 
 #: .\creditapp\templates\creditapp\credit_create_form.html:30
-#: .\portfolio\templates\portfolio\index.html:34
-#: .\viewonsnow\templates\viewonsnow\main.html:30
+#: .\portfolio\templates\portfolio\index.html:31
+#: .\viewonsnow\templates\viewonsnow\main.html:29
 msgid "Language"
 msgstr "Język"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:64
+#: .\creditapp\templates\creditapp\credit_create_form.html:71
 msgid "Credit name text"
 msgstr "Nazwa kalkulacji"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:73
+#: .\creditapp\templates\creditapp\credit_create_form.html:80
 msgid "Interest rate"
 msgstr "Oprocentowanie"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:82
+#: .\creditapp\templates\creditapp\credit_create_form.html:89
 msgid "Number of installments"
 msgstr "Liczba rat"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:91
+#: .\creditapp\templates\creditapp\credit_create_form.html:98
 #, fuzzy
 #| msgid "Credit application"
 msgid "Credit value"
 msgstr "Mini kalkulator kredytowy"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:100
+#: .\creditapp\templates\creditapp\credit_create_form.html:107
 msgid "Monthly income"
 msgstr "Miesięczne przychody"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:109
+#: .\creditapp\templates\creditapp\credit_create_form.html:116
 msgid "Monthly expenses"
 msgstr "Miesięczne wydatki"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:122
+#: .\creditapp\templates\creditapp\credit_create_form.html:129
 msgid "Total amount repaid"
 msgstr "Kwota całkowita do spłaty"
 
-#: .\creditapp\templates\creditapp\credit_create_form.html:131
+#: .\creditapp\templates\creditapp\credit_create_form.html:138
 msgid "Monthly installment"
 msgstr "Miesięczna rata"
 
-#: .\mysite_django_tutorial\settings.py:135
+#: .\mysite_django_tutorial\settings.py:136
 msgid "Polish"
 msgstr "Polski"
 
-#: .\mysite_django_tutorial\settings.py:136
+#: .\mysite_django_tutorial\settings.py:137
 msgid "English"
 msgstr "Angielski"
 
-#: .\portfolio\templates\portfolio\index.html:27
+#: .\portfolio\templates\portfolio\index.html:24
 msgid "Home"
 msgstr "Strona główna"
 
-#: .\portfolio\templates\portfolio\index.html:28
+#: .\portfolio\templates\portfolio\index.html:25
 msgid "About"
 msgstr "O mnie"
 
-#: .\portfolio\templates\portfolio\index.html:29
+#: .\portfolio\templates\portfolio\index.html:26
 msgid "Skills"
 msgstr "Umiejętności"
 
-#: .\portfolio\templates\portfolio\index.html:30
+#: .\portfolio\templates\portfolio\index.html:27
 msgid "Services"
 msgstr "Usługi"
 
-#: .\portfolio\templates\portfolio\index.html:31
+#: .\portfolio\templates\portfolio\index.html:28
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: .\portfolio\templates\portfolio\index.html:32
+#: .\portfolio\templates\portfolio\index.html:29
 msgid "Contact"
 msgstr "Kontakt"
 
-#: .\portfolio\templates\portfolio\index.html:66
+#: .\portfolio\templates\portfolio\index.html:70
 msgid ""
 "Hi, the page you see is for developing my programming skills (Python / "
 "Django)."
@@ -105,55 +105,65 @@ msgstr ""
 "Cześć, widoczna strona służy mi do rozwoju moich umiejętności programowania "
 "(Python/Django)."
 
-#: .\portfolio\templates\portfolio\index.html:79
+#: .\portfolio\templates\portfolio\index.html:83
 msgid "Projects / demo applications"
 msgstr "Projekty / aplikacje demo"
 
-#: .\portfolio\templates\portfolio\index.html:87
+#: .\portfolio\templates\portfolio\index.html:91
 #, fuzzy
 #| msgid "Portfolio"
 msgid "Portfolio application"
 msgstr "Portfolio"
 
-#: .\portfolio\templates\portfolio\index.html:88
+#: .\portfolio\templates\portfolio\index.html:92
 msgid "Visible app on this page."
 msgstr "Widoczna strona."
 
-#: .\portfolio\templates\portfolio\index.html:89
-#: .\portfolio\templates\portfolio\index.html:97
-#: .\portfolio\templates\portfolio\index.html:106
+#: .\portfolio\templates\portfolio\index.html:93
+#: .\portfolio\templates\portfolio\index.html:101
+#: .\portfolio\templates\portfolio\index.html:110
+#: .\portfolio\templates\portfolio\index.html:119
 msgid "Demo"
 msgstr "Demo"
 
-#: .\portfolio\templates\portfolio\index.html:96
+#: .\portfolio\templates\portfolio\index.html:100
 msgid "Application used to calculate installments."
 msgstr "Aplikacja służąca do wyliczania rat."
 
-#: .\portfolio\templates\portfolio\index.html:103
+#: .\portfolio\templates\portfolio\index.html:107
 msgid "Poll application"
 msgstr "Aplikacja ankietowa"
 
-#: .\portfolio\templates\portfolio\index.html:104
+#: .\portfolio\templates\portfolio\index.html:108
 msgid "Aplication from official"
 msgstr "Aplikacja z oficjalnego"
 
-#: .\portfolio\templates\portfolio\index.html:104
+#: .\portfolio\templates\portfolio\index.html:108
 msgid "tutorial"
 msgstr "samouczka"
 
-#: .\portfolio\templates\portfolio\index.html:104
+#: .\portfolio\templates\portfolio\index.html:108
 msgid "Django."
 msgstr "Django."
 
-#: .\portfolio\templates\portfolio\index.html:131
+#: .\portfolio\templates\portfolio\index.html:117
+#: .\viewonsnow\templates\viewonsnow\main.html:21
+msgid "Snow application"
+msgstr "Śniegowa aplikacja"
+
+#: .\portfolio\templates\portfolio\index.html:118
+msgid "Application used to snowfall simulation. Recruitment task."
+msgstr "Aplikacja służąca do symulacji opadów śniegu. Zadanie rekrutacyjne."
+
+#: .\portfolio\templates\portfolio\index.html:144
 msgid "Hello I'm"
 msgstr "Cześć, jestem"
 
-#: .\portfolio\templates\portfolio\index.html:132
+#: .\portfolio\templates\portfolio\index.html:145
 msgid "IT Implementer"
 msgstr "Wdrożeniowcem IT"
 
-#: .\portfolio\templates\portfolio\index.html:135
+#: .\portfolio\templates\portfolio\index.html:148
 msgid "My Work"
 msgstr "Moje projekty"
 
@@ -177,22 +187,21 @@ msgstr ""
 msgid "Unknown content"
 msgstr ""
 
-#: .\viewonsnow\templates\viewonsnow\main.html:22
-#, fuzzy
-#| msgid "Poll application"
-msgid "Snow application"
-msgstr "Aplikacja ankietowa"
-
-#: .\viewonsnow\templates\viewonsnow\main.html:64
+#: .\viewonsnow\templates\viewonsnow\main.html:70
 msgid "Input before snow"
-msgstr ""
+msgstr "Wartości przed opadem śniegu"
 
 #: .\viewonsnow\templates\viewonsnow\main.html:79
-msgid "output_after_snow"
-msgstr ""
+msgid "Clear"
+msgstr "Wyczyść"
 
-#~ msgid "Aplication"
-#~ msgstr "dasdasdasd"
+#: .\viewonsnow\templates\viewonsnow\main.html:80
+msgid "Calculation"
+msgstr "Wylicz"
+
+#: .\viewonsnow\views.py:37
+msgid "The entered value is not valid."
+msgstr "Wprowadzona wartość jest nieprawidłowa."
 
 #~ msgid "demo"
 #~ msgstr "demo pl"
