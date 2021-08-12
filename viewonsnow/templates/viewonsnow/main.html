@@ -69,7 +69,7 @@
                         <label for="id_input_before_snow" class="col-form-label">{% trans "Input before snow" %}</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" id="id_input_before_snow" class="form-control" name="input_before_snow" {% if calc %} value="{{ form.input_before_snow }}" disabled {% endif %} >
+                        <input type="text" id="id_input_before_snow" class="form-control" name="input_before_snow" required {% if calc %} value="{{ form.input_before_snow }}" disabled {% else %} value="" {% endif %} >
                     </div>
                 </div>
 
