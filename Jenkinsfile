@@ -13,13 +13,14 @@ pipeline {
                 //install requirements
                 sh "pip3.9 install -r ${env.WORKSPACE}/requirements.txt"
 
-                //test
+                //test variables
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}, WORKSPACE: ${env.WORKSPACE}"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing'
+                //echo 'Testing'
+                sh "python ${env.WORKSPACE}/manage.py test"
             }
         }
         stage('Deploy') {
