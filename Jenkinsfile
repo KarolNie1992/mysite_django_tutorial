@@ -4,7 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                //test Python version 
                 sh 'python --version'
+
+                //upgrade pip
+                sh 'pip3.9 install --upgrade pip'
+
+                //install requirements
+                sh 'pip3.9 install -r /var/jenkins_home/workspace/mysite_django_tutorial_main/requirements.txt'
+
+                //test
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}, WORKSPACE: ${env.WORKSPACE}"
             }
         }
         stage('Test') {
