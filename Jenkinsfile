@@ -20,6 +20,8 @@ pipeline {
         stage('Test') {
             steps {
                 //echo 'Testing'
+
+                //run Test in django project
                 sh "python ${env.WORKSPACE}/manage.py test"
             }
         }
