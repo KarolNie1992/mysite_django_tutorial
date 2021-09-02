@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 //test Python version 
-                sh 'python --version'
+                sh 'python3.9 --version'
 
                 //upgrade pip
                 sh 'pip3.9 install --upgrade pip'
@@ -22,7 +22,7 @@ pipeline {
                 //echo 'Testing'
 
                 //run Test in django project
-                sh "python ${env.WORKSPACE}/manage.py test"
+                sh "python3.9 ${env.WORKSPACE}/manage.py test"
             }
         }
         stage('Deploy') {
