@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('delete files from workspace') {
+            steps {
+                sh 'ls -l'
+                //sh 'rm -rf ${env.WORKSPACE}/*'
+            }
+        }
         stage('Build') {
             steps {
                 //test Python version 
